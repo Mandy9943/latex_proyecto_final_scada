@@ -1,0 +1,93 @@
+% CREACIÓN DEL DOCUMENTO
+\documentclass[
+	spanish, % Idioma: spanish, english, etc.	
+	letterpaper, oneside
+]{book}
+
+% INFORMACIÓN DEL DOCUMENTO
+\def\documenttitle {Trabajo Final de Sistemas de Scada}
+\def\documentsubtitle {}
+\def\degreetitle {
+	
+	
+}
+
+\def\universityname {Universidad Tecnológica de La Habana}
+\def\universityfaculty {``José Antonio Echeverría``}
+\def\universitydepartment {Facultad de Ingeniería Automática y Biomédica}
+\def\universitydepartmentimage {departamentos/cujae}
+\def\universitydepartmentimagecfg {height=3cm}
+\def\universitylocation {La Habana, Cuba}
+
+% INTEGRANTES, PROFESORES Y FECHAS
+\def\documentauthor {Armando Cesar Martin Calderón}
+\def\documentdate {\the\year}
+
+\def\portrait {
+	\begin{center}
+	\vspace{1.5cm} ~ \\
+	\MakeUppercase{\LARGE{ \textbf{\documenttitle}}} ~ \\
+	\vspace{1.5cm}
+	\MakeUppercase{\degreetitle} ~ \\
+	\vfill
+	\begin{tabular}{c}
+		\textbf{Autor} \\
+		\MakeUppercase{\documentauthor} \\
+		
+	
+		\vspace{0.5cm} \\
+		\MakeUppercase{\universitylocation} \\
+		\MakeUppercase{\documentdate}
+	\end{tabular}
+	\end{center}
+}
+\def\abstracttable {
+	\begin{tabular}{l}
+		
+		
+	\end{tabular}
+}
+ 
+% IMPORTACIÓN DEL TEMPLATE
+\input{template}
+
+% INICIO DE LAS PÁGINAS
+\begin{document}
+
+% PORTADA
+\templatePortrait
+
+% CONFIGURACIÓN DE PÁGINA Y ENCABEZADOS
+\templatePagecfg
+
+
+
+
+% TABLA DE CONTENIDOS - ÍNDICE
+\templateIndex
+
+% CONFIGURACIONES FINALES
+\templateFinalcfg
+
+
+
+
+% ======================= INICIO DEL DOCUMENTO =======================
+% INTRODUCCION
+
+% ESTADO DEL ARTE
+
+\chapter*{Introducción}
+\chapter{Descripción del Proceso}
+\chapter{Implementación del Sistema SCADA}
+\chapter{Manejo de Eventos y Usuarios}
+\chapter{Registro e Historial de Datos}
+\chapter{Comunicación con el Sistema de Control}
+\chapter{Comunicación con el Sistema de Control}
+
+
+
+\input{example} % Ejemplo, se puede borrar
+
+% FIN DEL DOCUMENTO
+\end{document}
