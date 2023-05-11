@@ -1,0 +1,16 @@
+\chapter{Implementación del Sistema SCADA}
+
+El sistema SCADA fue implementado utilizando el software TIA Portal de Siemens, una plataforma integral para la automatización industrial que permite una integración fluida entre el hardware y el software del sistema.\\
+
+En este proyecto, los sensores y actuadores fueron emulados a través del PLC y del propio sistema SCADA, cambiando los valores que simulan las señales de los sensores, las válvulas y las bombas. Aunque el PLC no está programado para un control activo del proceso, es crucial para recoger y almacenar los datos simulados del proceso, permitiendo un fácil acceso a estos datos para el sistema SCADA.\\
+
+Se crearon varias vistas sinópticas en el TIA Portal para representar visualmente el proceso de ósmosis inversa. Las vistas sinópticas son fundamentales para un sistema SCADA, ya que proporcionan una representación visual intuitiva del sistema que está siendo controlado.\\
+
+\insertimage[\label{img:osmosis}]{departamentos/osmosis.png}{scale=0.35}{Proceso de ósmosis inversa.}
+
+Como se puede apreciar en la captura de pantalla anterior, cada componente del proceso está representado con un icono gráfico. Los datos simulados en tiempo real de los sensores se muestran junto a los componentes correspondientes, permitiendo al operador tener una visión rápida del estado del sistema.\\
+
+Además de las vistas sinópticas, se implementaron otras funcionalidades importantes del sistema SCADA en TIA Portal. Por ejemplo, el sistema está configurado para manejar eventos y alarmas. Cuando un sensor simulado detecta un valor fuera del rango normal, el sistema genera una alarma para alertar al operador.\\
+
+También se implementó el registro y el historial de datos. Estos permiten al operador revisar los datos del proceso a lo largo del tiempo, lo que puede ser útil para identificar tendencias o problemas recurrentes.\\
+

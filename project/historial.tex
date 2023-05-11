@@ -1,0 +1,42 @@
+\chapter{Registro e Historial de Datos}
+
+\section{Registro de Datos}\label{sec:registro}
+
+Una parte integral de cualquier sistema de control y supervisión es el registro de datos. En este sistema SCADA implementado en TIA Portal, se registra y almacena una amplia gama de datos del proceso de tratamiento de agua.\\
+
+Los datos se almacenan en archivos específicos para cada parte del proceso. Esto facilita el acceso a los datos y ayuda a mantener un registro organizado. A continuación, se detalla cómo se almacenan los datos:\\
+
+
+\begin{enumerate}
+    \item Archivo de Dosificación: Este archivo almacena los datos del sensor de pH, que se utiliza para controlar la dosificación de metabisulfito de sodio. El pH es un indicador crucial de la calidad del agua y es esencial para el correcto funcionamiento de la planta de tratamiento de agua.
+    \item 	Archivo de Filtrado: Este archivo almacena las lecturas de los sensores de presión antes y después del filtro de 10 micras. Estos datos son vitales para asegurar que el sistema de filtrado está funcionando correctamente y que el agua está siendo debidamente filtrada antes de pasar al proceso de ósmosis inversa.
+    \item Archivo de Nivel de Tanque: En este archivo se guarda el nivel del tanque de almacenamiento de agua. Este dato es crucial para asegurar que siempre haya suficiente agua para el proceso de ósmosis inversa.
+    \item Archivos de Osmosis 1 y Osmosis 2: Estos archivos guardan datos como la conductividad, la presión y la temperatura antes y después de cada etapa de la ósmosis inversa. Estos datos son fundamentales para el monitoreo y el control del proceso de ósmosis inversa, ya que permiten identificar cualquier problema potencial y tomar medidas correctivas cuando sea necesario.
+
+\end{enumerate}
+
+
+Además de estos archivos de proceso, se ha creado un archivo de alarmas. Todas las alarmas de la categoría "error" se registran en este archivo. Este archivo de alarmas proporciona un registro de todos los eventos que han desencadenado una alarma, lo que es útil para la resolución de problemas y la mejora continua del sistema.\\
+
+
+
+
+\section{Historial de Datos}
+
+Además del registro y almacenamiento de datos, nuestro sistema SCADA también rastrea y visualiza el historial de varias variables del proceso en tiempo real. Esto se logra a través de una serie de gráficos en el software TIA Portal, que proporcionan una visión clara de cómo han evolucionado ciertas variables clave del proceso con el tiempo. A continuación, se detalla cada uno de estos gráficos:\\
+
+\begin{enumerate}
+    \item Histórico - pH: Este gráfico muestra el historial de los valores de pH en la etapa de dosificación. El pH es un parámetro crítico para la operación segura y eficiente de la planta de tratamiento de agua. Este historial permite a los operadores y a los ingenieros de control evaluar la efectividad del sistema de dosificación y hacer ajustes según sea necesario.
+   \item Histórico - Presiones: Este gráfico contiene el historial de las presiones antes y después del filtro. Si se observa una diferencia significativa entre estas dos presiones, podría ser un indicador de que el filtro necesita mantenimiento. Por tanto, tener un historial de estas presiones es esencial para la programación del mantenimiento preventivo.
+   \item Histórico - Conductividad 1 y 2: Estos gráficos muestran el historial de la conductividad a la salida de la primera y segunda etapas de la ósmosis inversa, respectivamente. La conductividad es un indicador clave de la eficacia del proceso de ósmosis inversa. Si aumenta, podría indicar un problema con las membranas de ósmosis inversa que necesitaría ser investigado.
+
+\end{enumerate}
+
+\insertimage[\label{img:historicos}]{departamentos/historicos.png}{scale=0.27}{Imágen de Hitóricos.}
+
+
+% ref a section in latex 
+
+Los datos para estos gráficos se toman directamente de los archivos que se mencionaron en la sección anterior \ref{sec:registro}. Esto significa que incluso si el sistema se detiene, los gráficos seguirán actualizándose con los datos almacenados en los archivos.\\
+
+Además, se ha configurado el visor de alarmas para cargar las alarmas directamente desde el archivo de alarmas. Esto permite a los usuarios ver un historial de alarmas, lo que es útil para la solución de problemas y la mejora continua del sistema.\\

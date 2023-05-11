@@ -1,0 +1,57 @@
+\chapter{Manejo de Eventos y Usuarios}
+
+
+\section{Avisos}
+El sistema SCADA implementado en este proyecto tiene una serie de alarmas configuradas para garantizar un funcionamiento seguro y eficiente del proceso de ósmosis inversa. Estas alarmas, o avisos, son generadas por el sistema cuando los valores simulados de las variables del proceso, como la presión, la temperatura y la conductividad, se desvían de los rangos normales.\\
+
+\insertimage[\label{img:disparo_alarma}]{departamentos/disparo_alarma.png}{scale=0.6}{Alarma disparada por alta conductividad a la salida de la 2da etapa de ósmois.}
+
+
+En sistemas de control y automatización, es crucial definir rangos seguros y operativos para todas las variables de proceso importantes. Estos rangos se establecen a menudo en base a normas técnicas, experiencia operativa y consideraciones de seguridad y calidad. El establecimiento de límites de alarma es una práctica común y esencial en la industria para prevenir daños a los equipos, interrupciones del proceso y violaciones de las normas de calidad.
+
+Las alarmas implementadas en el sistema son de dos tipos: avisos de error y avisos de advertencia. Los avisos de error se generan cuando una variable excede un límite crítico, indicando una condición que puede causar un daño significativo al sistema o comprometer la calidad del agua producida. Por otro lado, los avisos de advertencia se generan cuando una variable se acerca a un límite crítico, proporcionando una alerta temprana antes de que se produzca un problema potencial.\\
+
+Aquí está una descripción más detallada de cada alarma y su importancia:\\
+
+\begin{enumerate}
+		\item Tanque de almacenamiento lleno/vacío: Estas alarmas garantizan que el tanque de almacenamiento no se sobrellene ni se vacíe completamente. Un tanque demasiado lleno podría causar desbordamientos y daños, mientras que un tanque vacío podría interrumpir el proceso de ósmosis inversa.
+
+		\item 	Alta conductividad en la ósmosis 1/2: Estas alarmas se activan cuando el agua que pasa a través de las etapas de ósmosis tiene una conductividad más alta de lo normal, lo que podría indicar un funcionamiento ineficiente de las membranas de ósmosis o una calidad de agua inferior a la deseada.
+
+		\item Alta/Baja presión en la entrada de la ósmosis 1/2: Las alarmas de presión garantizan que el agua se introduce en las etapas de ósmosis a la presión correcta. Una presión demasiado alta podría dañar las membranas de ósmosis, mientras que una presión demasiado baja podría resultar en un rendimiento ineficiente del sistema.
+
+		\item Alta/Baja temperatura en la entrada de la ósmosis 1: Estas alarmas se activan si la temperatura del agua que entra en la primera etapa de ósmosis es demasiado alta o demasiado baja. La temperatura puede afectar la eficiencia de la ósmosis inversa y, en casos extremos, puede dañar las membranas de ósmosis.
+	
+	\end{enumerate}
+
+
+
+
+Cuando se genera una alarma, el sistema notifica al operador a través de la interfaz SCADA. Esta notificación permite al operador tomar medidas correctivas de manera oportuna para prevenir daños al sistema y garantizar la calidad del agua producida
+	
+\insertimage[\label{img:alarmas}]{departamentos/alarmas.png}{scale=0.4}{Listado de alarmas.}
+
+
+
+
+\section{Gestión de usuarios}
+
+El sistema SCADA implementado en este proyecto incorpora una gestión efectiva de usuarios, esencial para mantener la seguridad y la integridad del sistema. Se han establecido diferentes perfiles de usuario, cada uno con su propio nivel de acceso, lo que proporciona un control detallado sobre quién puede interactuar con el sistema y de qué manera.\\
+
+Existen tres niveles de acceso para los usuarios del sistema SCADA: Administrador, Monitorización y Operación.\\
+
+\begin{enumerate}
+	\item \textbf{Usuarios de Operación:}  Este perfil de usuario está diseñado para los operadores del sistema. Los usuarios con este nivel de acceso pueden visualizar los datos del proceso y tienen la capacidad de interactuar con el sistema, como encender las bombas del proceso a través de la interfaz SCADA.
+
+
+	\item \textbf{	Usuarios de Monitorización:} Este perfil proporciona un nivel de acceso superior al de los usuarios de Operación. Además de las capacidades de los usuarios de Operación, los usuarios de Monitorización pueden acceder a las imágenes de los históricos. Esto significa que pueden analizar los datos históricos del sistema, lo que es fundamental para la detección de tendencias y el análisis de rendimiento.
+
+
+	\item \textbf{Usuarios Administradores:}  Este es el nivel de acceso más alto y proporciona un control total sobre el sistema. Los usuarios Administradores pueden hacer todo lo que pueden hacer los usuarios de Operación y de Monitorización, pero también tienen la capacidad de administrar los perfiles de usuario. Esto significa que pueden crear, modificar y eliminar usuarios, así como ajustar sus niveles de acceso.
+	
+	\end{enumerate}
+	
+\insertimage[\label{img:grupos_usuarios}]{departamentos/grupos_usuarios.png}{scale=0.5}{Grupos de usuarios.}
+
+
+El acceso basado en roles es fundamental para garantizar la seguridad del sistema y minimizar el riesgo de errores humanos. También mejora la trazabilidad, ya que todas las acciones realizadas en el sistema pueden ser registradas y vinculadas a un usuario específico.\\

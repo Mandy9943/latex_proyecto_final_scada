@@ -1,0 +1,18 @@
+% Aquí, podrías explicar en detalle el proceso de la planta de tratamiento de agua y el subsistema de ósmosis inversa, junto con los sensores utilizados y su propósito. También puedes mencionar el software y el hardware utilizado en el proyecto, y puedes insertar un screenshot de tu sistema en TIA Portal aquí.
+\chapter{Descripción del Proceso}
+
+\insertimage[\label{img:sistema_presentacion}]{departamentos/sistema_presentacion.png}{scale=0.3}{Portada del SCADA.}
+
+
+El foco de este proyecto es la planta de tratamiento de agua, y más específicamente, el subsistema de ósmosis inversa. La ósmosis inversa es un proceso que elimina la mayor parte de los contaminantes presentes en el agua, incluyendo partículas suspendidas, sales disueltas, bacterias, virus, y otros contaminantes. Este proceso se realiza aplicando una presión mayor a la presión osmótica natural a través de una membrana semipermeable. Esta presión permite que el agua se desplace desde un área de alta concentración de contaminantes a un área de menor concentración, dando como resultado agua purificada.\\
+
+El proceso comienza con el agua pretratada que se almacena en un tanque. Un sensor de nivel en este tanque proporciona una lectura continua del nivel de agua, lo que permite regular el flujo de agua hacia el sistema de ósmosis inversa.\\
+
+El agua procede del tanque de almacenamiento y se dosifica con metabisulfito de sodio para eliminar cualquier cloro residual, ya que el cloro puede dañar las membranas de ósmosis inversa. Un sensor de pH se utiliza para monitorear el pH del agua durante esta etapa de pretratamiento.\\
+
+Posteriormente, el agua pasa por una filtración a través de un filtro de 10 micras para eliminar partículas más grandes. Se utilizan sensores de presión antes y después del filtro para garantizar un correcto funcionamiento de la filtración.\\
+
+Una vez filtrada, el agua se bombea hacia el sistema de ósmosis inversa, donde un sensor de presión garantiza que se aplica la presión correcta para el proceso. Además, se utilizan sensores de temperatura y conductividad para supervisar estas variables durante el proceso de ósmosis inversa.\\
+
+El hardware principal para este proyecto incluye los sensores mencionados, junto con bombas, actuadores y un PLC. Este último se utiliza principalmente como repositorio de datos del proceso y como medio para simular variables del proceso, en lugar de realizar un control activo del proceso. Todo está conectado y configurado utilizando el software TIA Portal de Siemens. Este software permite la integración de todos estos componentes en un solo sistema, facilitando el monitoreo del sistema en tiempo real.\\
+

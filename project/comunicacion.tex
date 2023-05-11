@@ -1,0 +1,13 @@
+\chapter{Comunicación con el Sistema de Control}
+
+La comunicación entre el sistema SCADA y el sistema de control es crucial para el correcto funcionamiento de nuestra planta de tratamiento de agua. En nuestro caso, el sistema de control es un PLC Siemens S7-1200, que es conocido por su robustez y fiabilidad.\\
+
+La comunicación entre el PLC y el sistema SCADA se realizó a través de una red Profinet, que es un estándar de comunicación industrial basado en Ethernet. Profinet ofrece alta velocidad y la capacidad de manejar una gran cantidad de datos, lo que lo convierte en una opción ideal para nuestra aplicación.\\
+
+Para configurar la comunicación, se asignaron el PLC y el sistema SCADA a la misma subred. Esto se logró configurando sus direcciones IP de tal manera que solo difieren en el último número. Por ejemplo, si la dirección IP del PLC es 192.168.1.1, la del sistema SCADA podría ser 192.168.1.2. Esta configuración asegura que ambos dispositivos pueden comunicarse entre sí sin interferencia de otros dispositivos en la red.\\
+
+Una vez establecida la comunicación, el PLC se utiliza para simular las señales de los sensores y actuadores del proceso. Estos valores se transmiten al sistema SCADA, que luego los utiliza para controlar el proceso y generar alarmas según sea necesario.\\
+
+Es importante señalar que aunque el PLC es esencialmente un dispositivo de simulación en este contexto, en una implementación real de este sistema, el PLC sería el corazón del sistema de control. Controlaría directamente los sensores y actuadores basándose en su programación y transmitiría los datos del proceso al sistema SCADA para su visualización y control de alto nivel.\\
+
+Este esquema de comunicación permite un control y monitoreo eficientes del proceso, así como una rápida detección y respuesta a cualquier condición anormal. Aquí se puede incluir una captura de pantalla de la configuración de comunicación en TIA Portal para ilustrar esta sección.\\
